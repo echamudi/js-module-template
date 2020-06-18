@@ -1,9 +1,9 @@
 {
   "name": "@echamudi/minimath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript module template for node.js and web browser environment",
   "main": "./index.js",
-  "private": "false",
+  "private": false,
   "scripts": {
     "build:commonjs": "tsc -p tsconfig.build-commonjs.json",
     "build:umd": "webpack --config webpack.build-umd.js --mode development",
@@ -22,6 +22,13 @@
   "bugs": {
     "url": "https://github.com/echamudi/minimath/issues"
   },
+  "include": [
+    "/dist",
+    "src",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
   "homepage": "https://github.com/echamudi/minimath#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
