@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/echamudi/minimath.git"
+    "url": "git+https://github.com/echamudi/js-module-template.git"
   },
   "bugs": {
-    "url": "https://github.com/echamudi/minimath/issues"
+    "url": "https://github.com/echamudi/js-module-template/issues"
   },
   "files": [
     "/dist",
@@ -29,7 +29,7 @@
     "/LICENSE",
     "/README.md"
   ],
-  "homepage": "https://github.com/echamudi/minimath#readme",
+  "homepage": "https://github.com/echamudi/js-module-template#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
