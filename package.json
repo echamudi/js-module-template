@@ -1,6 +1,6 @@
 {
   "name": "@echamudi/minimath",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript module template for node.js and web browser environment",
   "main": "./index.js",
   "private": false,
