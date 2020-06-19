@@ -23,5 +23,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build
-    - run: npx http-server -p 8080 -s .
+    - run: npx http-server -p 8080 -s . &
     - run: npm test
