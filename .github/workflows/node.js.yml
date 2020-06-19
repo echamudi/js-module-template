@@ -7,8 +7,24 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  browser:
+    runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build
+    - run: npx http-server -p 8080 -s . &
+    - run: npm test:browser
+  node:
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,5 +39,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build
-    - run: npx http-server -p 8080 -s . &
-    - run: npm test
+    - run: npm test:node
