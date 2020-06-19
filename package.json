@@ -9,8 +9,8 @@
     "build:umd": "webpack --config webpack.build-umd.js --mode development",
     "build:umd-min": "webpack --config webpack.build-umd.js --mode production",
     "build": "run-s build:commonjs build:umd build:umd-min",
-    "test:browser": "node ./test/puppeteer-run.js",
-    "test:node": "mocha test/test.node.js"
+    "test:browser": "mocha ./test/puppeteer-run.js",
+    "test:node": "mocha ./test/test.node.js"
   },
   "author": "Ezat Chamudi <echamudi@outlook.com> (https://github.com/echamudi)",
   "license": "MIT",
