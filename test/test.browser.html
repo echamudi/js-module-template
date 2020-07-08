@@ -2,14 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <title>Library test by using script directly</title>
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
 </head>
 
 <body>
-    <h3>Library test by using script directly</h3>
-    <script src="../dist/umd/minimath.js"></script>
-    <script src="./test.browser.js"></script>
+    <div id="mocha"></div>
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script class="mocha-init">
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    </script>
+    <script src="/dist/umd/minimath.js"></script>
+    <script src="/test/test.js"></script>
+    <script class="mocha-exec">
+        mocha.run(() => {
+            let fail = false;
+            document.querySelectorAll('.test.fail').forEach((el) => {
+                fail = true;
+                console.log('✖ ' + el.querySelector('h2').textContent + '\n' + el.querySelector('.error').textContent);
+            });
+
+            if (fail) {
+                console.log('fail');
+            } else {
+                console.log('success');
+            }
+        });
+    </script>
 </body>
 
 </html>
